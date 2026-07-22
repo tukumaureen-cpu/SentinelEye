@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SentinelEye - System Logs</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#081b29;
+color:white;
+}
+
+header{
+background:#0d2538;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h2{
+color:#00d9ff;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00d9ff;
+}
+
+.container{
+width:95%;
+margin:40px auto;
+}
+
+h1{
+color:#00d9ff;
+margin-bottom:20px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+background:#0d2538;
+}
+
+th{
+background:#12344b;
+color:#00d9ff;
+padding:15px;
+}
+
+td{
+padding:15px;
+border-bottom:1px solid #1b4058;
+}
+
+tr:hover{
+background:#133852;
+}
+
+.success{
+color:#00ff88;
+font-weight:bold;
+}
+
+.failed{
+color:#ff4d4d;
+font-weight:bold;
+}
+
+footer{
+text-align:center;
+margin-top:40px;
+padding:20px;
+color:#aaa;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h2>🛡 SentinelEye</h2>
+
+<nav>
+
+<a href="/dashboard">Dashboard</a>
+<a href="/threats">Threats</a>
+<a href="/alerts">Alerts</a>
+<a href="/logout">Logout</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>System Activity Logs</h1>
+
+<table>
+
+<tr>
+<th>Log ID</th>
+<th>User ID</th>
+<th>Activity</th>
+<th>Time</th>
+<th>Status</th>
+</tr>
+
+{% for log in logs %}
+
+<tr>
+
+<td>{{ log.log_id }}</td>
+<td>{{ log.user_id }}</td>
+<td>{{ log.activity }}</td>
+<td>{{ log.action_time }}</td>
+
+<td>
+<span class="{{ log.status|lower }}">
+{{ log.status }}
+</span>
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+<footer>
+
+© 2026 SentinelEye | Cyber Threat Detection and Alert Monitoring System
+
+</footer>
+
+</body>
+</html>

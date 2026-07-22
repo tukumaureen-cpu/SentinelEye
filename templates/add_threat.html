@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Add Threat | SentinelEye</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#081b29;
+color:white;
+}
+
+header{
+background:#0d2538;
+padding:20px 40px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+header h2{
+color:#00d9ff;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+font-weight:bold;
+}
+
+nav a:hover{
+color:#00d9ff;
+}
+
+.container{
+width:600px;
+margin:40px auto;
+background:#0d2538;
+padding:30px;
+border-radius:10px;
+box-shadow:0 0 15px rgba(0,217,255,0.3);
+}
+
+h1{
+color:#00d9ff;
+text-align:center;
+margin-bottom:25px;
+}
+
+label{
+display:block;
+margin-top:15px;
+margin-bottom:5px;
+}
+
+input, select{
+width:100%;
+padding:12px;
+border:none;
+border-radius:5px;
+font-size:16px;
+}
+
+button{
+width:100%;
+padding:12px;
+margin-top:25px;
+background:#00d9ff;
+color:#081b29;
+border:none;
+border-radius:5px;
+font-size:18px;
+font-weight:bold;
+cursor:pointer;
+}
+
+button:hover{
+background:white;
+}
+
+.back{
+display:inline-block;
+margin-top:20px;
+color:#00d9ff;
+text-decoration:none;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+
+<h2>🛡 SentinelEye</h2>
+
+<nav>
+<a href="/dashboard">Dashboard</a>
+<a href="/threats">Threats</a>
+<a href="/alerts">Alerts</a>
+<a href="/logs">Logs</a>
+<a href="/logout">Logout</a>
+</nav>
+
+</header>
+
+<div class="container">
+
+<h1>Add New Threat</h1>
+
+<form method="POST">
+
+<label>Threat Type</label>
+<input type="text" name="threat_type" required>
+
+<label>Source IP</label>
+<input type="text" name="source_ip" required>
+
+<label>Severity</label>
+<select name="severity">
+<option>High</option>
+<option>Medium</option>
+<option>Low</option>
+</select>
+
+<label>Status</label>
+<select name="status">
+<option>Active</option>
+<option>Investigating</option>
+<option>Resolved</option>
+</select>
+
+<button type="submit">Save Threat</button>
+
+</form>
+
+<a class="back" href="/threats">⬅ Back to Threats</a>
+
+</div>
+
+</body>
+</html>
