@@ -3,96 +3,290 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SentinelEye | Home</title>
+
+<title>SentinelEye | Cyber Threat & Alert Monitoring System</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
     font-family:Arial, Helvetica, sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
     background:#081b29;
-    color:white;
+    color:#fff;
 }
 
-nav{
+/* HEADER */
+
+header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
     background:#0d2538;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:20px 60px;
+    padding:15px 60px;
+    z-index:1000;
+    box-shadow:0 0 15px rgba(0,0,0,.4);
 }
 
-nav h2{
-    color:#00d9ff;
+.logo img{
+    width:200px;
+    height:auto;
+    display:block;
 }
 
-nav ul{
-    list-style:none;
-    display:flex;
-}
-
-nav ul li{
-    margin-left:30px;
-}
-
-nav ul li a{
+nav a{
+    color:#fff;
     text-decoration:none;
-    color:white;
-    font-weight:bold;
+    margin-left:30px;
+    font-size:18px;
     transition:.3s;
 }
 
-nav ul li a:hover{
-    color:#00d9ff;
+nav a:hover{
+    color:#ff2d2d;
 }
 
+.login-btn{
+    background:#ff2d2d;
+    color:white;
+    padding:10px 22px;
+    border-radius:6px;
+}
+
+.login-btn:hover{
+    background:#c70000;
+}
+
+/* HERO */
+
 .hero{
-    height:85vh;
+    height:100vh;
     display:flex;
-    flex-direction:column;
     justify-content:center;
     align-items:center;
     text-align:center;
-    padding:20px;
+    padding:120px 10% 0;
+    background:
+    linear-gradient(rgba(8,27,41,.88),rgba(8,27,41,.90)),
+    url("https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=1600");
+    background-size:cover;
+    background-position:center;
 }
 
-.hero h1{
-    font-size:60px;
-    color:#00d9ff;
+.hero-content h1{
+    font-size:48px;
+    line-height:1.2;
     margin-bottom:20px;
+    color:white;
 }
 
-.hero p{
-    width:70%;
+.hero-content h1 span{
+    color:#ff2d2d;
+}
+
+.hero-content p{
     font-size:20px;
-    line-height:1.8;
-    margin-bottom:40px;
+    line-height:34px;
+    margin-bottom:35px;
 }
 
-.btn{
+.buttons a{
     display:inline-block;
-    padding:15px 40px;
-    background:#00d9ff;
-    color:#081b29;
+    margin:10px;
+    padding:14px 30px;
+    border-radius:6px;
     text-decoration:none;
-    border-radius:8px;
     font-size:18px;
-    font-weight:bold;
     transition:.3s;
 }
 
-.btn:hover{
-    background:white;
+.primary{
+    background:#ff2d2d;
+    color:white;
 }
+
+.primary:hover{
+    background:#b50000;
+}
+
+.secondary{
+    border:2px solid white;
+    color:white;
+}
+
+.secondary:hover{
+    background:white;
+    color:#081b29;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 8%;
+}
+
+.section-title{
+    text-align:center;
+    color:#ff2d2d;
+    font-size:42px;
+    margin-bottom:20px;
+}
+
+.section-text{
+    text-align:center;
+    line-height:30px;
+    margin-bottom:50px;
+    font-size:18px;
+}
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.feature-card{
+    background:#102c44;
+    padding:30px;
+    border-radius:10px;
+    transition:.4s;
+}
+
+.feature-card:hover{
+    transform:translateY(-10px);
+}
+
+.feature-card h3{
+    color:#ff2d2d;
+    margin-bottom:15px;
+}
+
+.feature-card p{
+    line-height:28px;
+}
+
+/* ABOUT */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.about img{
+    width:100%;
+    border-radius:10px;
+}
+
+.about-text h2{
+    font-size:40px;
+    color:#ff2d2d;
+    margin-bottom:20px;
+}
+
+.about-text p{
+    font-size:18px;
+    line-height:32px;
+    margin-bottom:20px;
+}
+
+/* CONTACT */
+
+.contact{
+    background:#102c44;
+    border-radius:10px;
+    padding:60px;
+    text-align:center;
+}
+
+.contact h2{
+    font-size:38px;
+    color:#ff2d2d;
+    margin-bottom:20px;
+}
+
+.contact p{
+    font-size:18px;
+    line-height:30px;
+    margin-bottom:30px;
+}
+
+.contact a{
+    display:inline-block;
+    background:#ff2d2d;
+    color:white;
+    padding:14px 30px;
+    text-decoration:none;
+    border-radius:6px;
+}
+
+.contact a:hover{
+    background:#b50000;
+}
+
+/* FOOTER */
 
 footer{
     background:#0d2538;
     text-align:center;
+    padding:25px;
+    margin-top:60px;
+}
+
+footer p{
+    font-size:16px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px){
+
+header{
+    flex-direction:column;
     padding:20px;
+}
+
+nav{
+    margin-top:15px;
+}
+
+nav a{
+    display:block;
+    margin:10px 0;
+}
+
+.hero-content h1{
+    font-size:36px;
+}
+
+.hero-content p{
+    font-size:18px;
+}
+
+.about{
+    grid-template-columns:1fr;
+}
+
+.logo img{
+    width:170px;
+}
+
+.buttons a{
+    display:block;
+    margin:15px auto;
+    width:220px;
+}
+
 }
 </style>
 
@@ -100,36 +294,152 @@ footer{
 
 <body>
 
+<header>
+
+<div class="logo">
+<img src="{{ url_for('static', filename='images/logo.png') }}" alt="SentinelEye Logo">
+</div>
+
 <nav>
 
-<h2>SentinelEye</h2>
+<a href="/">Home</a>
 
-<ul>
-    <li><a href="/">Home</a></li>
-    <li><a href="/login">Login</a></li>
-    <li><a href="/threats">Threats</a></li>
-    <li><a href="/alerts">Alerts</a></li>
-    <li><a href="/logs">Logs</a></li>
-</ul>
+<a href="/about">About Us</a>
+
+<a href="/contact">Contact Us</a>
+
+<a href="/login" class="login-btn">Login</a>
 
 </nav>
 
+</header>
+
 <section class="hero">
 
-<h1>SentinelEye</h1>
+<div class="hero-content">
+
+<h1>
+Protect Your Network With
+<span>SentinelEye</span>
+</h1>
 
 <p>
-Advanced Cyber Threat Detection and Alert Monitoring System that detects,
-monitors and reports cyber threats in real time while helping organizations
-protect critical systems and data.
+A Web-Based Cybersecurity Threat and Alert Monitoring System that enables organizations to detect cyber threats, monitor security events, and respond to incidents in real time.
 </p>
 
-<a href="/login" class="btn">Log in to SentinelEye</a>
+<div class="buttons">
+
+<a href="/login" class="primary">Get Started</a>
+
+<a href="/about" class="secondary">Learn More</a>
+
+</div>
+
+</div>
 
 </section>
 
+<section>
+
+<h2 class="section-title">System Features</h2>
+
+<p class="section-text">
+SentinelEye provides powerful cybersecurity monitoring features that help organizations detect, monitor and respond to cyber threats.
+</p>
+
+<div class="features">
+
+<div class="feature-card">
+<h3>🛡 Threat Detection</h3>
+<p>Detect suspicious activities and cyber attacks in real time.</p>
+</div>
+
+<div class="feature-card">
+<h3>🚨 Alert Management</h3>
+<p>Generate alerts instantly based on detected threats.</p>
+</div>
+
+<div class="feature-card">
+<h3>👥 User Management</h3>
+<p>Manage authorized users securely with role-based access.</p>
+</div>
+<div class="feature-card">
+<h3>📊 Dashboard Analytics</h3>
+<p>View real-time statistics on threats, alerts, users, and activity logs.</p>
+</div>
+
+<div class="feature-card">
+<h3>📝 Activity Logs</h3>
+<p>Maintain detailed audit logs for investigations and compliance purposes.</p>
+</div>
+
+<div class="feature-card">
+<h3>🔒 Secure Authentication</h3>
+<p>Protect administrator access using secure login and authenticated sessions.</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- ABOUT SECTION -->
+
+<section>
+
+<div class="about">
+
+<div class="about-text">
+
+<h2>Why Choose SentinelEye?</h2>
+
+<p>
+SentinelEye is a web-based Cyber Threat and Alert Monitoring System developed to improve organizational cybersecurity through continuous monitoring, rapid threat detection, and centralized alert management.
+</p>
+
+<p>
+The system enables security administrators to monitor network activities, investigate incidents, manage alerts, and maintain a secure computing environment through an intuitive dashboard.
+</p>
+
+<a href="/about" class="primary">Read More</a>
+
+</div>
+
+<div>
+
+<img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=900" alt="Cyber Security">
+
+</div>
+
+</div>
+
+</section>
+
+<!-- CONTACT SECTION -->
+
+<section>
+
+<div class="contact">
+
+<h2>Need Assistance?</h2>
+
+<p>
+If you are unable to log in or need technical support regarding SentinelEye, our support team is ready to assist you.
+</p>
+
+<a href="/contact">Contact Support</a>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
+
 <footer>
-© 2026 SentinelEye Cyber Security Monitoring System
+
+<p>
+© 2026 SentinelEye | Web-Based Cybersecurity Threat & Alert Monitoring System
+</p>
+
 </footer>
 
 </body>

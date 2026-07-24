@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Contact Us | SentinelEye</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+body{
+background:#081b29;
+color:white;
+}
+
+header{
+background:#0d2538;
+padding:20px 60px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+box-shadow:0 0 10px rgba(0,0,0,.4);
+}
+
+.logo{
+font-size:30px;
+font-weight:bold;
+color:#00bcd4;
+}
+
+.logo span{
+color:white;
+}
+
+nav a{
+text-decoration:none;
+color:white;
+margin-left:25px;
+font-size:18px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#00bcd4;
+}
+
+.hero{
+padding:60px;
+text-align:center;
+background:#0f2f47;
+}
+
+.hero h1{
+font-size:45px;
+color:#00bcd4;
+margin-bottom:15px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.container{
+width:85%;
+margin:50px auto;
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:40px;
+}
+
+.contact-info,
+.contact-form{
+background:#102c44;
+padding:30px;
+border-radius:10px;
+}
+
+.contact-info h2,
+.contact-form h2{
+color:#00bcd4;
+margin-bottom:20px;
+}
+
+.contact-info p{
+margin:15px 0;
+font-size:17px;
+line-height:28px;
+}
+
+input,
+textarea{
+width:100%;
+padding:12px;
+margin-bottom:15px;
+border:none;
+border-radius:5px;
+font-size:16px;
+}
+
+textarea{
+resize:none;
+}
+
+button{
+width:100%;
+padding:15px;
+background:#00bcd4;
+color:white;
+border:none;
+border-radius:5px;
+font-size:17px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#008fa1;
+}
+
+footer{
+background:#0d2538;
+text-align:center;
+padding:20px;
+margin-top:40px;
+}
+
+@media(max-width:768px){
+
+.container{
+grid-template-columns:1fr;
+}
+
+header{
+flex-direction:column;
+}
+
+nav{
+margin-top:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">
+Sentinel<span>Eye</span>
+</div>
+
+<nav>
+
+<a href="/">Home</a>
+<a href="/about">About Us</a>
+<a href="/contact">Contact Us</a>
+<a href="/login">Login</a>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<h1>Contact Us</h1>
+
+<p>
+Need help accessing SentinelEye? Contact our support team.
+</p>
+
+</section>
+
+<div class="container">
+
+<div class="contact-info">
+
+<h2>Support Information</h2>
+
+<p><strong>Email:</strong> support@sentineleye.com, mumbimaureen538@gmail.com</p>
+
+<p><strong>Phone:</strong> +254 768 431 594, +254 706 307 269</p>
+
+<p><strong>Office Hours:</strong> Monday - Friday (8:00 AM - 5:00 PM)</p>
+
+<p>
+If you experience login problems, account issues, or detect suspicious system activity,
+please contact our support team using the form provided.
+</p>
+
+</div>
+
+<div class="contact-form">
+
+<h2>Send a Message</h2>
+
+<form>
+
+<input type="text" placeholder="Full Name" required>
+
+<input type="email" placeholder="Email Address" required>
+
+<input type="text" placeholder="Subject" required>
+
+<textarea rows="6" placeholder="Type your message here..." required></textarea>
+
+<button type="submit">
+Send Message
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+<footer>
+
+<p>
+
+© 2026 SentinelEye | Cyber Threat & Alert Monitoring System
+
+</p>
+
+</footer>
+
+</body>
+</html>

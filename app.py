@@ -26,20 +26,13 @@ def home():
 @app.route("/login", methods=["GET", "POST"])
 def login():
 
-
     if request.method == "POST":
 
         username = request.form["username"]
         password = request.form["password"]
 
-        cursor.execute(
-            "SELECT * FROM users WHERE username=%s AND password=%s",
-            (username, password)
-        )
-
-        user = cursor.fetchone()
-
-        if user:
+        # Temporary login
+        if username == "admin" and password == "admin123":
             return redirect(url_for("dashboard"))
         else:
             return "Invalid Username or Password"
@@ -100,6 +93,15 @@ def add_threat():
 def logout():
     return redirect(url_for("login"))
 
+#-------------- About -------------
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+#-------------- Contact------------
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

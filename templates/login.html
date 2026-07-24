@@ -6,6 +6,7 @@
 <title>SentinelEye Login</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
@@ -14,7 +15,7 @@
 }
 
 body{
-    background:#081b29;
+    background:#290c08;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -22,16 +23,27 @@ body{
 }
 
 .login-box{
-    background:#0d2538;
+    background:#350d38;
     width:400px;
     padding:40px;
     border-radius:10px;
-    box-shadow:0 0 20px rgba(0,217,255,0.3);
+    box-shadow:0 0 20px rgba(255,0,191,0.3);
+}
+
+/* Logo */
+.logo{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.logo img{
+    width:120px;
+    height:auto;
 }
 
 .login-box h2{
     text-align:center;
-    color:#00d9ff;
+    color:#ff000d;
     margin-bottom:30px;
 }
 
@@ -48,8 +60,8 @@ button{
     width:100%;
     padding:12px;
     margin-top:20px;
-    background:#00d9ff;
-    color:#081b29;
+    background:#ff0062;
+    color:#29080f;
     border:none;
     border-radius:6px;
     font-size:18px;
@@ -58,14 +70,21 @@ button{
 }
 
 button:hover{
-    background:white;
+    background:rgba(255,255,255,0.055);
 }
+
 </style>
+
 </head>
 
 <body>
 
 <div class="login-box">
+
+<div class="logo">
+    <img src="{{ url_for('static', filename='images/logo.png') }}" alt="SentinelEye Logo">
+</div>
+
 <h2>SentinelEye Login</h2>
 
 <form method="POST">
